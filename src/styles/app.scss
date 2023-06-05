@@ -1,3 +1,149 @@
 @import 'utils/variables';
 @import 'components/type';
 @import '../../node_modules/modern-normalize/modern-normalize';
+@import '../../node_modules/swiper/swiper-bundle.css';
+
+
+.swiper {
+    width: 90%;
+    height: 600px;
+    margin: 0 20px;
+}
+.swiper-slide{
+    height: 600px;
+}
+.p_itw{
+    text-align: right;
+}
+
+.img--itw{
+    max-width: 300px;
+}
+
+.container {
+    width: 90%;
+    margin: 50px auto;
+  }
+  .container > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+  
+  .dropdown a {
+    text-decoration: none;
+  }
+  .dropdown [data-toggle="dropdown"] {
+    position: relative;
+    display: block;
+    background: none;
+    box-shadow: 0 1px 0 yellow inset, 0 -1px 0 yellow inset;
+    padding: 10px;
+  }
+  .dropdown [data-toggle="dropdown"]:hover {
+    background: red;
+  }
+  .dropdown .icon-arrow {
+    position: absolute;
+    display: block;
+    font-size: 0.7em;
+    color: black;
+    top: 14px;
+    right: 10px;
+  }
+  .dropdown .icon-arrow.open {
+    transform: rotate(-180deg);
+    transition: transform 0.6s;
+  }
+  .dropdown .icon-arrow.close {
+    transform: rotate(0deg);
+    transition: transform 0.6s;
+  }
+  .dropdown .icon-arrow:before {
+    content: "\25BC";
+    // content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" data-name="Calque 1" viewBox="0 0 95.72 37.5"><path d="M0 0c15.88 11.63 31.76 24.17 47.41 36.2 7.14-5.38 16.78-13.01 23.85-18.26C77.31 13.42 89.6 4.41 95.72 0 89.8 4.73 77.86 14.12 71.87 18.74c-6.91 5.4-17.02 13.03-24.07 18.46l-.4.3-.39-.31C31.44 25.06 15.25 12.46 0 0Z" style="fill:#ffe600"/></svg>');
+  }
+  .dropdown .dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .dropdown .dropdown-menu li {
+    padding: 0;
+  }
+  .dropdown .dropdown-menu li a {
+    display: block;
+    color: #6f6f6f;
+    background: #eee;
+    padding: 10px 10px;
+  }
+  .dropdown .dropdown-menu li a:hover {
+    background: #f6f6f6;
+  }
+  .dropdown .show,
+  .dropdown .hide {
+    transform-origin: 50% 0%;
+  }
+  .dropdown .show {
+    display: block;
+    max-height: 9999px;
+    transform: scaleY(1);
+    animation: showAnimation 0.5s ease-in-out;
+    transition: max-height 1s ease-in-out;
+  }
+  .dropdown .hide {
+    max-height: 0;
+    transform: scaleY(0);
+    animation: hideAnimation 0.4s ease-out;
+    transition: max-height 0.6s ease-out;
+  }
+  
+.container--illu{
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    text-indent:-2000vh;
+}
+.container--illu--swiper{
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 400px;
+    text-indent:-2000vh;
+}      
+.container--illu-idee{
+    background-image: url(../assets/images/Design_Idee.svg);
+}
+.container--illu-meth{
+    background-image: url(../assets/images/Design_Methode.svg);
+}
+.container--illu-hypo{
+    background-image: url(../assets/images/Design_Hypothese.svg);
+}
+.container--illu-fonc{
+    background-image: url(../assets/images/Design_Fonction.svg);
+}
+.container--illu-oral{
+    background-image: url(../assets/images/Design_Presentation.svg);
+}
+.container--illu-adn{
+    background-image: url(../assets/images/Design_ADN.svg);
+}
+.container--illu-vieux{
+    background-image: url(../assets/images/Design_Vieux.svg);
+}
+.container--illu-jeune{
+    background-image: url(../assets/images/Design_Jeune.svg);
+}
+.container--illu-asbl{
+    background-image: url(../assets/images/Design_ASBL.svg);
+}
+.container--illu-social{
+    background-image: url(../assets/images/Design_Sociale.svg);
+}
+.container--illu-fleche{
+    background-image: url(../assets/images/Design_Fleche.svg);
+}
