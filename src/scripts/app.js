@@ -1,10 +1,60 @@
 'use strict';
 
-// Button Burger
 
-//Animation Burger
+function openBurger () {  
+  let openMenu = document.querySelector('.menu--list');
+  let buttonBurger = document.querySelector('.btn--burger');
+    
+  buttonBurger.addEventListener('click', (e) => {    
+    openMenu.classList.toggle('burger');
+  });    
+  let openMenuLinks = document.querySelectorAll('.menu--list a');
+  openMenuLinks.forEach(link => {
+    link.addEventListener('click', (e) => {    
+    openMenu.classList.toggle('burger');
+    }); 
+  })
+}
+openBurger();
+
+//Anim Burger
+
+let transition = document.querySelector(".btn--burger");
+
+transition.addEventListener('click', myFunction);
+
+function myFunction() {
+    transition.classList.toggle("burger");
+}
 
 // Dark Mode
+let darkTheme = document.getElementById('input');
+
+darkTheme.addEventListener('change', function () {
+    if (document.body.dataset.theme === "dark") {
+        light();
+        localStorage.setItem("theme", "light");
+    } else {
+        dark();
+        localStorage.setItem("theme", "dark");
+    }
+});
+
+let userDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+let theme = localStorage.getItem('theme');
+if ((!theme && userDark) || (theme === "dark")) {
+    dark();
+} else if (theme === "light") {
+    light();
+}
+
+function dark() {
+    document.body.setAttribute("data-theme", "dark");
+}
+function light() {
+    document.body.setAttribute("data-theme", "light");
+}
 
 // Animation D-M
 
@@ -36,10 +86,11 @@ var swiper2 = new Swiper('.swiper2', {
 
 
 // Dropdown Menu
-var dropdown = document.querySelectorAll('.dropdown');
-var dropdownArray = Array.prototype.slice.call(dropdown,0);
+
+let dropdown = document.querySelectorAll('.dropdown');
+let dropdownArray = Array.prototype.slice.call(dropdown,0);
 dropdownArray.forEach(function(el){
-  var button = el.querySelector('a[data-toggle="dropdown"]'),
+  let button = el.querySelector('a[data-toggle="dropdown"]'),
       menu = el.querySelector('.dropdown-menu'),
       arrow = button.querySelector('i.icon-arrow');
 

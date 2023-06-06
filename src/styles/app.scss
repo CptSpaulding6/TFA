@@ -3,7 +3,188 @@
 @import '../../node_modules/modern-normalize/modern-normalize';
 @import '../../node_modules/swiper/swiper-bundle.css';
 
+// $font--txt: ;
+// $font--title: ;
+// $color--txt: ;
+// $color-title: ;
+// $title--num: ;
+// $title--sec: ;
+// $title--txt: ;
+// $title--sstxt: ;
 
+// Navigation
+
+.grid--nav{
+    grid-template-columns: repeat(3, 1fr);
+}
+.nav{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    padding: 8px;
+}
+
+.container--menu{
+    background-color:none;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+// Logo
+
+.logo{
+    background-image: url('../assets/images/Logo.svg');
+    width: 100px;
+    text-indent: -2000vh;
+    background-repeat: no-repeat;
+    grid-column: 1/1;
+    cursor: pointer;
+}
+
+// Menu
+
+.menu--list{
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    padding: 16vh 0 0 0;
+    margin: 0;
+    background-color: #6f6f6f;
+    position: fixed;
+    transform: translateY(-100%);
+    transition: transform 1.6s cubic-bezier(0.25, 1, 0.5, 1);
+
+    .menu--el{
+        list-style: none;
+        text-decoration: none;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        font-size: 1em;
+        margin: 8px 0;
+        padding: 16px;
+
+        &a{
+            text-decoration:none;
+            color: firebrick ; 
+        }
+        &:active{
+            transform: scale(1.2);
+        }
+        &:hover{
+            transform:translateY(5px);
+            text-decoration: underline;
+            color: blueviolet;
+        }
+    }
+}
+
+// Burger
+
+.btn--burger{
+    display: block;
+    position: fixed;
+    right: 5vw;
+    padding: 0;
+    z-index: 20;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;    
+}
+.burger{
+    transform: translateY(0);
+    transition: transform 1.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.bar{
+    display: block;
+    width: 32px;
+    height: 4px;
+    background: black;
+    border-radius: 3px;
+    transition: 1s ease-in-out;
+    transition-delay: 0.6s;
+}
+.burger .bar{
+    width: 0;
+    background: transparent;
+    transition: .4s ease-in-out;
+}
+.bar::before, .bar::after {
+    content: "";
+    background: black;
+    width: 32px;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    border-radius: 3px;
+    transition: all .5s ease-in-out;
+}
+.bar::before{
+    transform: translateY(-12px);
+}
+.burger > .bar::before{
+    transform: rotate(135deg);
+    transition-delay: 0.5s;
+}
+.bar::after{
+    transform: translateY(12px);
+}
+.burger > .bar::after{
+    transform: rotate(-135deg);
+    transition-delay: 0.5s;
+}
+
+// Dark Mode
+
+.btn--darkmode {
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+.btn--darkmode input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.switch {
+    position: absolute;
+    cursor: pointer;
+    height: 24px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: yellow;
+    border-radius: 34px;
+    transition: .4s;
+}
+.switch:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: white;
+    transition: .4s;
+}
+input:checked+.switch {
+    background-color: blue;
+}
+input:focus+.switch {
+    box-shadow: 0 0 1px #FFB870;
+}
+input:checked+.switch:before {
+    transform: translateX(26px);
+}
+
+// Slider
 .swiper {
     width: 90%;
     height: 600px;
@@ -20,86 +201,89 @@
     max-width: 300px;
 }
 
+// List DropDown
+
 .container {
-    width: 90%;
-    margin: 50px auto;
-  }
-  .container > ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-  }
-  
-  .dropdown a {
-    text-decoration: none;
-  }
-  .dropdown [data-toggle="dropdown"] {
-    position: relative;
-    display: block;
-    background: none;
-    box-shadow: 0 1px 0 yellow inset, 0 -1px 0 yellow inset;
-    padding: 10px;
-  }
-  .dropdown [data-toggle="dropdown"]:hover {
-    background: red;
-  }
-  .dropdown .icon-arrow {
-    position: absolute;
-    display: block;
-    font-size: 0.7em;
-    color: black;
-    top: 14px;
-    right: 10px;
-  }
-  .dropdown .icon-arrow.open {
-    transform: rotate(-180deg);
-    transition: transform 0.6s;
-  }
-  .dropdown .icon-arrow.close {
-    transform: rotate(0deg);
-    transition: transform 0.6s;
-  }
-  .dropdown .icon-arrow:before {
-    content: "\25BC";
-    // content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" data-name="Calque 1" viewBox="0 0 95.72 37.5"><path d="M0 0c15.88 11.63 31.76 24.17 47.41 36.2 7.14-5.38 16.78-13.01 23.85-18.26C77.31 13.42 89.6 4.41 95.72 0 89.8 4.73 77.86 14.12 71.87 18.74c-6.91 5.4-17.02 13.03-24.07 18.46l-.4.3-.39-.31C31.44 25.06 15.25 12.46 0 0Z" style="fill:#ffe600"/></svg>');
-  }
-  .dropdown .dropdown-menu {
-    max-height: 0;
-    overflow: hidden;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .dropdown .dropdown-menu li {
-    padding: 0;
-  }
-  .dropdown .dropdown-menu li a {
-    display: block;
-    color: #6f6f6f;
-    background: #eee;
-    padding: 10px 10px;
-  }
-  .dropdown .dropdown-menu li a:hover {
-    background: #f6f6f6;
-  }
-  .dropdown .show,
-  .dropdown .hide {
-    transform-origin: 50% 0%;
-  }
-  .dropdown .show {
-    display: block;
-    max-height: 9999px;
-    transform: scaleY(1);
-    animation: showAnimation 0.5s ease-in-out;
-    transition: max-height 1s ease-in-out;
-  }
-  .dropdown .hide {
+   width: 90%;
+   margin: 50px auto;
+}
+.container > ul {
+   list-style: none;
+   padding: 0;
+   margin: 0 0 20px 0;
+} 
+.dropdown a {
+   text-decoration: none;
+}
+.dropdown [data-toggle="dropdown"] {
+   position: relative;
+   display: block;
+   background: none;
+   box-shadow: 0 1px 0 yellow inset, 0 -1px 0 yellow inset;
+   padding: 10px;
+}
+.dropdown [data-toggle="dropdown"]:hover {
+  background: red;
+}
+.dropdown .icon-arrow {
+  position: absolute;
+  display: block;
+  font-size: 0.7em;
+  color: black;
+  top: 14px;
+  right: 10px;
+}
+.dropdown .icon-arrow.open {
+  transform: rotate(-180deg);
+  transition: transform 0.6s;
+}
+.dropdown .icon-arrow.close {
+  transform: rotate(0deg);
+  transition: transform 0.6s;
+}
+.dropdown .icon-arrow:before {
+  content: "\25BC";
+  // content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" data-name="Calque 1" viewBox="0 0 95.72 37.5"><path d="M0 0c15.88 11.63 31.76 24.17 47.41 36.2 7.14-5.38 16.78-13.01 23.85-18.26C77.31 13.42 89.6 4.41 95.72 0 89.8 4.73 77.86 14.12 71.87 18.74c-6.91 5.4-17.02 13.03-24.07 18.46l-.4.3-.39-.31C31.44 25.06 15.25 12.46 0 0Z" style="fill:#ffe600"/></svg>');
+}
+.dropdown .dropdown-menu {
+  max-height: 0;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.dropdown .dropdown-menu li {
+  padding: 0;
+}
+.dropdown .dropdown-menu li a {
+  display: block;
+  color: #6f6f6f;
+  background: #eee;
+  padding: 10px 10px;
+}
+.dropdown .dropdown-menu li a:hover {
+  background: #f6f6f6;
+}
+.dropdown .show,
+.dropdown .hide {
+  transform-origin: 50% 0%;
+}
+.dropdown .show {
+  display: block;
+  max-height: 9999px;
+  transform: scaleY(1);
+  animation: showAnimation 0.5s ease-in-out;
+  transition: max-height 1s ease-in-out;
+}
+ .dropdown .hide {
     max-height: 0;
     transform: scaleY(0);
     animation: hideAnimation 0.4s ease-out;
     transition: max-height 0.6s ease-out;
-  }
-  
+}
+
+// Illustrations
+
 .container--illu{
     background-position: center;
     background-repeat: no-repeat;
