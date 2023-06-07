@@ -31,7 +31,7 @@ function myFunction() {
 let darkTheme = document.getElementById('input');
 
 darkTheme.addEventListener('change', function () {
-    if (document.body.dataset.theme === "dark") {
+    if (document.body.dataset.theme === "light") {
         light();
         localStorage.setItem("theme", "light");
     } else {
