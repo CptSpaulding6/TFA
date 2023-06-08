@@ -66,6 +66,7 @@ var swiper = new Swiper(".mySwiper", {
     effect:"coverflow",
     grabCursor: true,
     centeredSlider: true,
+    spaceBetween: 24,
     coverflowEffect:{
         rotate:60,
         stretch:0,
@@ -78,12 +79,29 @@ var swiper = new Swiper(".mySwiper", {
       }
 })
 
-var swiper2 = new Swiper('.swiper2', {
-    loop: true,
-    pagination: '.swiper-pagination2',
-    paginationClickable: true,
+var swiper2 = new Swiper(".mySwiperTwo", {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 50,
+    },
+  },
 });
-
 
 // Dropdown Menu
 
