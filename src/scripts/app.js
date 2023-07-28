@@ -28,76 +28,86 @@ function myFunction() {
 }
 
 // Dark Mode
+
 let darkTheme = document.getElementById('input');
 
 darkTheme.addEventListener('change', function () {
-    if (document.body.dataset.theme === "light") {
-        light();
-        localStorage.setItem("theme", "light");
-    } else {
-        dark();
-        localStorage.setItem("theme", "dark");
-    }
+  if (document.body.dataset.theme === "dark") {
+    light();
+    localStorage.setItem("theme", "light");
+} else {
+    dark();
+    localStorage.setItem("theme", "dark");
+}
 });
 
-let userDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const userDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 let theme = localStorage.getItem('theme');
-if ((!theme && userDark) || (theme === "dark")) {
-    dark();
-} else if (theme === "light") {
-    light();
+if ((!theme && userDark) || (theme === "light")) {
+dark();
+} else if (theme === "dark") {
+light();
 }
 
 function dark() {
-    document.body.setAttribute("data-theme", "dark");
+document.body.setAttribute("data-theme", "dark");
 }
 function light() {
-    document.body.setAttribute("data-theme", "light");
+document.body.setAttribute("data-theme", "light");
 }
 
 // Animation D-M
 
 // Slider
-import Swiper from "swiper";
+// import Swiper from "swiper";
+import Swiper, { Navigation, Pagination } from 'swiper';
 
 var swiper = new Swiper(".mySwiper", {
     loop: true,
+    grabCursor: true,
     effect:"coverflow",
     grabCursor: true,
-    centeredSlider: true,
+    centeredSlider: false,
     spaceBetween: 24,
     coverflowEffect:{
         rotate:60,
         stretch:0,
         slideShadows:true
     },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-        navigationClickable: true,
-      }
+    scrollbar: {
+      el: '.swiper-scrollbar',
+      hide: true,
+      draggable: true,
+      dragSize: 20,
+      snapOnRelease: true,
+    }
 })
 
 var swiper2 = new Swiper(".mySwiperTwo", {
   slidesPerView: 1,
-  spaceBetween: 10,
+  spaceBetween: 24,
+  grabCursor: true,
   loop: true,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
   },
   breakpoints: {
-    640: {
+    "@0.00": {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    "@0.75": {
       slidesPerView: 2,
       spaceBetween: 20,
     },
-    768: {
-      slidesPerView: 4,
+    "@1.00": {
+      slidesPerView: 3,
       spaceBetween: 40,
     },
-    1024: {
-      slidesPerView: 5,
+    "@1.50": {
+      slidesPerView: 4,
       spaceBetween: 50,
     },
   },
