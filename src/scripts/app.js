@@ -2,13 +2,13 @@
 
 
 function openBurger () {  
-  let openMenu = document.querySelector('.menu--list');
+  let openMenu = document.querySelector('.menu__list');
   let buttonBurger = document.querySelector('.btn--burger');
     
   buttonBurger.addEventListener('click', (e) => {    
     openMenu.classList.toggle('burger');
   });    
-  let openMenuLinks = document.querySelectorAll('.menu--list a');
+  let openMenuLinks = document.querySelectorAll('.menu__list a');
   openMenuLinks.forEach(link => {
     link.addEventListener('click', (e) => {    
     openMenu.classList.toggle('burger');
@@ -32,21 +32,21 @@ function myFunction() {
 let darkTheme = document.getElementById('input');
 
 darkTheme.addEventListener('change', function () {
-  if (document.body.dataset.theme === "dark") {
-    light();
-    localStorage.setItem("theme", "light");
+  if (document.body.dataset.theme === "light") {
+  dark();
+  localStorage.setItem("theme", "dark");
 } else {
-    dark();
-    localStorage.setItem("theme", "dark");
+  light();
+  localStorage.setItem("theme", "light");
 }
 });
 
-const userDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const userDark = window.matchMedia('prefers-color-scheme: light').matches;
 
 let theme = localStorage.getItem('theme');
-if ((!theme && userDark) || (theme === "light")) {
+if ((!theme && userDark) || (theme === "dark")) {
 dark();
-} else if (theme === "dark") {
+} else if (theme === "light") {
 light();
 }
 
@@ -57,10 +57,8 @@ function light() {
 document.body.setAttribute("data-theme", "light");
 }
 
-// Animation D-M
-
 // Slider
-// import Swiper from "swiper";
+
 import Swiper, { Navigation, Pagination } from 'swiper';
 
 var swiper = new Swiper(".mySwiper", {
@@ -75,42 +73,11 @@ var swiper = new Swiper(".mySwiper", {
         stretch:0,
         slideShadows:true
     },
-    scrollbar: {
-      el: '.swiper-scrollbar',
-      hide: true,
-      draggable: true,
-      dragSize: 20,
-      snapOnRelease: true,
-    }
-})
-
-var swiper2 = new Swiper(".mySwiperTwo", {
-  slidesPerView: 1,
-  spaceBetween: 24,
-  grabCursor: true,
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    "@0.00": {
-      slidesPerView: 1,
-      spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+      clickable: true,
     },
-    "@0.75": {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-    "@1.00": {
-      slidesPerView: 3,
-      spaceBetween: 40,
-    },
-    "@1.50": {
-      slidesPerView: 4,
-      spaceBetween: 50,
-    },
-  },
 });
 
 // Dropdown Menu
@@ -119,8 +86,8 @@ let dropdown = document.querySelectorAll('.dropdown');
 let dropdownArray = Array.prototype.slice.call(dropdown,0);
 dropdownArray.forEach(function(el){
   let button = el.querySelector('a[data-toggle="dropdown"]'),
-      menu = el.querySelector('.dropdown-menu'),
-      arrow = button.querySelector('i.icon-arrow');
+      menu = el.querySelector('.dropdown__menu'),
+      arrow = button.querySelector('span.icon__arrow');
 
   button.onclick = function(event) {
     if(!menu.hasClass('show')) {
