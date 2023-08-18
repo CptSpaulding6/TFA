@@ -1,5 +1,6 @@
 'use strict';
 
+import AOS from "aos";
 AOS.init();
 
 // Burger Menu 
@@ -43,8 +44,6 @@ darkTheme.addEventListener('change', function () {
   localStorage.setItem("theme", "light");
 }
 });
-
-const userDark = window.matchMedia('prefers-color-scheme: light').matches;
 
 let theme = localStorage.getItem('theme');
 if ((!theme && userDark) || (theme === "dark")) {
