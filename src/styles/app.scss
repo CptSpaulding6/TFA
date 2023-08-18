@@ -13,6 +13,14 @@ body{
     background-color: var(--color-bg);
     width: 100vw;
     scroll-behavior: smooth;
+    &:focus{
+        transform: Scale(1.1);
+        text-decoration: underline;
+        transition: .6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    &a:visited{
+        color: grey;
+    }
 }
 
 // ScrollBar
@@ -146,7 +154,7 @@ body{
                 transform: Scale(1.1);
                 transition: .6s cubic-bezier(0.25, 1, 0.5, 1);
                 border: thin 0px;
-            }            
+            }
         }
     }
 }
@@ -400,6 +408,20 @@ $font--title: Juana Regular auto;
             color: var(--color-title);
         }
     }
+    &--src{
+            font-size: 20px;
+            grid-column: 1/-1;
+            & a{
+                color: #ffe600;
+                padding: 4px 8px;
+                text-decoration: none;
+                &:hover{
+                    background-color: var(--color-slider);
+                    text-decoration: underline;
+                    border-radius: 5px;
+                }
+            }
+    }
 } 
 
 .hide {
@@ -541,6 +563,11 @@ tbody th:nth-child(odd){
 .dropdown a {
     text-decoration: none;
     color: var(--color-title);
+    &:focus{
+        transform: Scale(1.1);
+        text-decoration: underline;
+        transition: .6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
   }
 .dropdown [data-toggle="dropdown"] {
     position: relative;
@@ -707,7 +734,12 @@ tbody th:nth-child(odd){
             width: 0;
             height: 2px;
             background: var(--color-title);
-        }     
+        }
+        &:focus{
+            transform: Scale(1.1);
+            text-decoration: underline;
+            transition: .6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
     } 
 }
 
@@ -719,6 +751,13 @@ tbody th:nth-child(odd){
     max-height: 30px;
     background-repeat: no-repeat;
     background-image: url(../assets/images/DWT.svg);
+}
+.ui-kit{
+    grid-column: 1/-1;
+    justify-content: left;
+    margin: 35px 0 0 0;
+    padding: 0;
+    grid-row: auto;
 }
 
 // Media Querries
@@ -741,6 +780,10 @@ tbody th:nth-child(odd){
     }
     .grid__footer{
         grid-template-columns: repeat(6, 1fr);
+    }
+
+    .ui-kit{
+        grid-column: 1/-1;
     }
 
     //Logo 
@@ -842,11 +885,11 @@ tbody th:nth-child(odd){
     .txt{
         font-size: 20px;
         grid-column: 2/9;
-        font-size: 20px;
         line-height: 170%;
 
         &--intro{
             font-size: 24px;
+            font-weight: 600;
             grid-column: 1/9;
             margin: 40px 0 0 0;
         }
@@ -855,6 +898,7 @@ tbody th:nth-child(odd){
             padding: 0 0 0 32px;
             &--big{
                 font-size: 24px;
+                font-weight: 600;
                 grid-column: 2/-1;
             }
         }
@@ -868,6 +912,9 @@ tbody th:nth-child(odd){
             & a{
                 font-size: 18px;
             }
+        }
+        &--src{
+            grid-column: 2/-1;
         }
     }
 
@@ -907,7 +954,7 @@ tbody th:nth-child(odd){
     .slider {
         grid-column: 1/-1;
         margin: 32px 0;
-        height: 1200px;
+        height: 1250px;
         position: relative;
         overflow: hidden;
         display: flex;
@@ -1010,6 +1057,14 @@ tbody th:nth-child(odd){
         max-width: 100px;
         max-height: 50px;
     }
+}
+
+.ui-kit{
+    grid-column: 1/-1;
+    justify-content: left;
+    margin: 35px 0 0 0;
+    padding: 0;
+    grid-row: auto;
 }
 
 @media (min-width : 1024px){
@@ -1141,7 +1196,7 @@ tbody th:nth-child(odd){
     // Texte
 
     .txt{
-        font-size: 18px;
+        font-size: 20px;
         grid-column: 4/11;
 
         &--intro{
@@ -1149,18 +1204,13 @@ tbody th:nth-child(odd){
             grid-column: 3/11;
             margin: 32px 0 0 0;
         }
-        &--big{
-            font-size: 22px;
-            height: 30px;
-            grid-column: 5/11;
-        }
         &--list{
             grid-column: 6/11;
             margin: 8px 0 0 0;
             padding: 0 0 0 26px;
 
             &--big{
-                font-size: 20px;
+                font-size: 22px;
                 grid-column: 3/7;
             }
         }
@@ -1174,6 +1224,9 @@ tbody th:nth-child(odd){
             & a{
                 font-size: 18px;
             }
+        }
+        &--src{
+            grid-column: 4/-1;
         }
     }
 
@@ -1211,7 +1264,7 @@ tbody th:nth-child(odd){
     .slider {
         grid-column: 3/11;
         margin: 24px 0;
-        height: 100vh;
+        height: 110vh;
         position: relative;
         overflow: hidden;
         display: flex;
@@ -1303,11 +1356,19 @@ tbody th:nth-child(odd){
     // Footer
 
     .menu__footer{
-        grid-column: 5/8;
+        grid-column: 5/-1;
     }
     .dwt{
-        grid-column: 5/7;
+        grid-column: 2/4;
         max-width: 100px;
         max-height: 70px;
     }
 }
+
+    .ui-kit{
+        grid-column: 1/-1;
+        justify-content: left;
+        margin: 35px 0 0 0;
+        padding: 0;
+        grid-row: auto;
+    }
