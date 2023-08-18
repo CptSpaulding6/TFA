@@ -26,9 +26,13 @@
     "laravel-mix": "^6.0.41",
     "rimraf": "^3.0.2",
     "sass": "^1.49.0",
-    "sass-loader": "^12.4.0"
+    "sass-loader": "^12.4.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "modern-normalize": "^2.0.0",
     "swiper": "^9.3.2"
   }

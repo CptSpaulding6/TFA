@@ -1,5 +1,8 @@
 'use strict';
 
+AOS.init();
+
+// Burger Menu 
 
 function openBurger () {  
   let openMenu = document.querySelector('.menu__list');
@@ -57,29 +60,6 @@ function light() {
 document.body.setAttribute("data-theme", "light");
 }
 
-// Slider
-
-import Swiper, { Navigation, Pagination } from 'swiper';
-
-var swiper = new Swiper(".mySwiper", {
-    loop: true,
-    grabCursor: true,
-    effect:"coverflow",
-    grabCursor: true,
-    centeredSlider: false,
-    spaceBetween: 24,
-    coverflowEffect:{
-        rotate:60,
-        stretch:0,
-        slideShadows:true
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-      clickable: true,
-    },
-});
-
 // Dropdown Menu
 
 let dropdown = document.querySelectorAll('.dropdown');
@@ -110,3 +90,49 @@ dropdownArray.forEach(function(el){
 Element.prototype.hasClass = function(className) {
     return this.className && new RegExp("(^|\\s)" + className + "(\\s|$)").test(this.className);
 };
+
+// Menu au Scroll Desktop
+
+let menu = document.querySelector(".menu__list");
+let stickyOffset = 100;
+
+let menuTop = menu.offsetTop + stickyOffset;
+
+if (window.innerWidth >= 1180) {
+  var scroll = function scroll() {
+    if (window.pageYOffset >= menuTop) {
+      menu.classList.add("sticky");
+    } else {
+      menu.classList.remove("sticky");
+    }
+  };
+  window.onscroll = function () {
+    scroll();
+  };
+}
+
+// Scrollbar Progress
+
+const scrollProgress = document.getElementById('scroll-progress');
+const height =
+  document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+window.addEventListener('scroll', () => {
+  const scrollTop =
+    document.body.scrollTop || document.documentElement.scrollTop;
+  scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
+});
+
+// Animation Text
+
+var observer = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+var hiddenElements = document.querySelectorAll('.hide');
+hiddenElements.forEach(function (el) {
+  return observer.observe(el);
+});

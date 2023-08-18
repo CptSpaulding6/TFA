@@ -28,8 +28,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">  
     <!-- Link CSS -->
     <link rel="stylesheet" href="styles/app.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <!-- Link JS -->
     <script src="scripts/app.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
   </head>
   <body>
@@ -54,125 +58,133 @@
       </nav>
     </header>
     <main>
-      <section class="grid">
-        <div class="container--illu container--illu-ineg">idée</div>
-        <h1 class="title title--num" id="Idee">01</h1>
-        <h2 class="title title--sec">Inégalité</h2>
-        <h3 class="title title--prin">La Fracture&nbsp;Numérique</h3>
-        <h4 class="title title--para">Qu'est-ce que&nbsp;c'est&nbsp;?</h4>
-        <p class="txt txt--intro">La <span class="txt--big-jaune">Fracture Numérique</span> est un fait contemporain qui concerne les inégalités d’accès, d’utilisation et de compétences liées aux Technologies de l’Information et&nbsp;de&nbsp;la&nbsp;Communication.</p>
-        <h4 class="title title--para">Qui impact-elle&nbsp;:</h4>
-        <ul class="list">
-          <li class="txt txt--list">Les personnes âgées.</li>
-          <li class="txt txt--list">Les personnes moins diplômées.</li>
-          <li class="txt txt--list">Les nouveaux arrivants.</li>
-          <li class="txt txt--list">Les familles à faible revenu.</li>
-          <li class="txt txt--list">Zones rurales.</li>
-        </ul>
-        <h4 class="title title--para">Trois degrés de fracture&nbsp;numérique&nbsp;:</h4>
-        <ul class="list">
-          <li class="txt txt--list--big">3ème Degré</li>
-          <li class="txt txt--list">Personnes ayant de faibles compétences numériques (utilisation basique et simple d’information et&nbsp;communication).</li>
-          <li class="txt txt--list--big">2ème Degré</li>
-          <li class="txt txt--list">Personnes n’utilisant pas régulièrement d’appareil numérique et d'Internet avec peu de diversité des usages du&nbsp;numérique.</li>
-          <li class="txt txt--list--big">1er Degré</li>
-          <li class="txt txt--list">Personnes n’ayant pas de connexion internet ou aucun appareil numérique.</li>
-        </ul>
-        <h4 class="title title--para">Deux niveaux de&nbsp;fracture&nbsp;:</h4>
-        <table class="table">
-          <thead>
-            <tr>
-              <th class="table__el--head">L'Accès (Premier&nbsp;Degré)</th>
-              <th class="table__el--head">L'Usage (Second&nbsp;Degré)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="table__el">Les disparités sociales et générationnelles en terme d'accès aux outils numériques et au&nbsp;réseau&nbsp;internet.</td>
-              <td class="table__el">L'absence ou le manque de compétences dans l'utilisations des technologies pour les populations les moins diplômées et&nbsp;plus&nbsp;agées.</td>
-            </tr>
-            <tr>
-              <td class="table__el">Les disparités entre les pays riches et&nbsp;pauvres.</td>
-              <td class="table__el">Le niveau d'instruction, de revenu, facillité&nbsp;d'accès.</td>
-            </tr>
-            <tr>
-              <td class="table__el">Les disparités entre les zones urbaines et rurales. Principalement à cause de la couverture réseaux, la vitesse de&nbsp;connexion.</td>
-              <td class="table__el">Les résidents des zones rurales peuvent être moins familiers, moins compétents avec les technologies numériques pour les utiliser efficacement.</td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="container--illu container--illu-fleche">fleche</div>
-          <h4 class="title title--para">L'inclusion numérique à différentes&nbsp;échelles&nbsp;:</h4>
-          <ul class="list">
-            <li class="txt txt--list--big">Politique</li>
-            <li class="txt txt--list">Investissement dans l’éducation, les infrastructures technologiques, le matériel, réduction des coûts, étendre la&nbsp;connectivitée.</li>
-            <li class="txt txt--list--big">Services Publics</li>
-            <li class="txt txt--list">Assistant social, services de l’état accompagne pour aider à réaliser les démarches, propose des subventions et des&nbsp;formations.</li>
-            <li class="txt txt--list--big">Campagnes de sensibilisation</li>
-            <li class="txt txt--list">Campagnes pour informer les populations sur les avantages de l’utilisation des technologies, prévention sur les risques et&nbsp;arnaques.</li>
-            <li class="txt txt--list--big">Association Sans But&nbsp;Lucratif</li>
-            <li class="txt txt--list">Proposent des formations de bénéficiaire avec accompagnement pour acquérir des compétences numérique et la formation d’agents aidant numériques pour les&nbsp;professionnels.</li>
-          </ul>
+      <div id="scroll-progress"></div>
+      <section class="grid__blue">
+        <div data-aos="fade-right" data-aos-duration="1500" class="container__illu container__illu-ineg">idée</div>
+        <h1 data-aos="fade-down-left" data-aos-duration="1500" class="title title--num" id="Idee">01</h1>
+        <h2 data-aos="fade-up-left" data-aos-duration="1500" class="title title--sec">Inégalité</h2>
       </section>
       <section class="grid">
-        <div class="container--illu container--illu-meth">méthode</div>
-        <h1 class="title title--num" id="Met">02</h1>
-        <h2 class="title title--sec">Méthode</h2>
-        <h3 class="title title--prin">Rencontres&nbsp;et&nbsp;Interviews</h3>
-        <p class="txt txt--intro">La <span class="txt--big-jaune">première étape</span> pour en apprendre davantage sur la fracture numérique et ses problématiques est d’aller à la rencontre des personnes qui sont directement impactées par celle-ci. Afin de mieux comprendre les <span class="txt--big-jaune">principales difficultés</span> auxquelles ils doivent faire&nbsp;face.</p>
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="container--illu--swiper container--illu-vieux">Illustration</div>
+          <h3 class="title title--prin hide">La Fracture&nbsp;Numérique</h3>
+          <h4 class="title title--para hide">Qu'est-ce que&nbsp;c'est&nbsp;?</h4>
+          <p class="txt txt--intro hide">La <span class="txt--big-jaune">Fracture Numérique</span> est un fait contemporain qui concerne les inégalités d’accès, d’utilisation et les compétences liées aux Technologies de l’Information et&nbsp;de&nbsp;la&nbsp;Communication.</p>
+          <h4 class="title title--para hide">Qui impact-elle&nbsp;:</h4>
+          <ul class="list hide">
+            <li class="txt txt--list">Les personnes âgées.</li>
+            <li class="txt txt--list">Les personnes moins diplômées.</li>
+            <li class="txt txt--list">Les nouveaux arrivants.</li>
+            <li class="txt txt--list">Les familles à faible revenu.</li>
+            <li class="txt txt--list">Zones rurales.</li>
+          </ul>
+          <h4 class="title title--para hide">Trois degrés de fracture&nbsp;numérique&nbsp;:</h4>
+          <ul class="list hide">
+            <li class="txt txt--list--big">3ème Degré</li>
+            <li class="txt txt--list">Personnes ayant de faibles compétences numériques (utilisation basique et simple d’information et&nbsp;communication).</li>
+            <li class="txt txt--list--big">2ème Degré</li>
+            <li class="txt txt--list">Personnes n’utilisant pas régulièrement d’appareil numérique et d'Internet avec peu de diversité des usages du&nbsp;numérique.</li>
+            <li class="txt txt--list--big">1er Degré</li>
+            <li class="txt txt--list">Personnes n’ayant pas de connexion internet ou aucun appareil numérique.</li>
+          </ul>
+          <h4 class="title title--para hide">Deux niveaux de&nbsp;fracture&nbsp;:</h4>
+          <table class="table hide">
+            <thead>
+              <tr>
+                <th class="table__el--head">L'Accès (Premier&nbsp;Degré)</th>
+                <th class="table__el--head">L'Usage (Second&nbsp;Degré)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="table__el">Les disparités sociales et générationnelles en terme d'accès aux outils numériques et au&nbsp;réseau&nbsp;internet.</td>
+                <td class="table__el">L'absence ou le manque de compétences dans l'utilisations des technologies pour les populations les moins diplômées et&nbsp;plus&nbsp;agées.</td>
+              </tr>
+              <tr>
+                <td class="table__el">Les disparités entre les pays riches et&nbsp;pauvres.</td>
+                <td class="table__el">Le niveau d'instruction, de revenu, facillité&nbsp;d'accès.</td>
+              </tr>
+              <tr>
+                <td class="table__el">Les disparités entre les zones urbaines et rurales. Principalement à cause de la couverture réseaux, la vitesse de&nbsp;connexion.</td>
+                <td class="table__el">Les résidents des zones rurales peuvent être moins familiers, moins compétents avec les technologies numériques pour les utiliser&nbsp;efficacement.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div data-aos="fade-right" data-aos-duration="1500" class="container__illu container__illu-fleche hide">fleche</div>
+            <h4 class="title title--para hide">L'inclusion numérique à différentes&nbsp;échelles&nbsp;:</h4>
+            <ul class="list hide">
+              <li class="txt txt--list--big">Politique</li>
+              <li class="txt txt--list">Investissement dans l’éducation, les infrastructures technologiques, le matériel, réduction des coûts, étendre la&nbsp;connectivitée.</li>
+              <li class="txt txt--list--big">Services Publics</li>
+              <li class="txt txt--list">Assistant social, services de l’état accompagne pour aider à réaliser les démarches, propose des subventions et des&nbsp;formations.</li>
+              <li class="txt txt--list--big">Campagnes de sensibilisation</li>
+              <li class="txt txt--list">Campagnes pour informer les populations sur les avantages de l’utilisation des technologies, prévention sur les risques et&nbsp;arnaques.</li>
+              <li class="txt txt--list--big">Association Sans But&nbsp;Lucratif</li>
+              <li class="txt txt--list">Proposent des formations de bénéficiaire avec accompagnement pour acquérir des compétences numérique et la formation d’agents aidant numériques pour les&nbsp;professionnels.</li>
+            </ul>
+      </section>
+      <section class="grid__blue">
+        <div data-aos="fade-right" data-aos-duration="1500" class="container__illu container__illu-meth">méthode</div>
+        <h1 data-aos="fade-down-left" data-aos-duration="1500" class="title title--num" id="Met">02</h1>
+        <h2 data-aos="fade-up-left" data-aos-duration="1500" class="title title--sec">Méthode</h2>
+      </section>
+      <section class="grid">
+        <h3 class="title title--prin hide">Rencontres&nbsp;et&nbsp;Interviews</h3>
+        <p class="txt txt--intro hide">La <span class="txt--big-jaune">première étape</span> pour en apprendre davantage sur la fracture numérique et ses problématiques est d’aller à la rencontre des personnes qui sont directement impactées par celle-ci. Afin de mieux comprendre les <span class="txt--big-jaune">principales difficultés</span> auxquelles ils doivent faire&nbsp;face.</p>     
+        <div class="slider hide">
+          <input class="slider__dot" type="radio" name="slider" title="slide1" checked="checked">
+          <input class="slider__dot" type="radio" name="slider" title="slide2">
+          <input class="slider__dot" type="radio" name="slider" title="slide3">
+          <input class="slider__dot" type="radio" name="slider" title="slide4">
+          <input class="slider__dot" type="radio" name="slider" title="slide5">
+          <div class="slider__inner">
+            <div class="slider__body">
+              <div class="container__illu--swiper container__illu-vieux">Illustration</div>
               <h4 class="title title--slide">Personnes âgées & Professionnels de&nbsp;santé</h4>
-              <p class="txt txt--intro txt--intro--slide" >Ma <span class="txt--big-jaune">première idées</span> pour interviewer des personnes en situation de fracture numérique est de me rendre dans des <span class="txt--big-jaune">maisons de repos</span> situées à Namur afin de recueillir l’avis des <span class="txt--big-jaune"> résidents et des professionnels de&nbsp;santé</span></p>
+              <p class="txt txt--intro" >Ma <span class="txt--big-jaune">première idées</span> pour interviewer des personnes en situation de fracture numérique est de me rendre dans des <span class="txt--big-jaune">maisons de repos</span> situées à Namur afin de recueillir l’avis des <span class="txt--big-jaune"> résidents et des professionnels de&nbsp;santé</span></p>
               <p class="txt txt--itw">Lors de mes premières visites, j’ai été voir les membres du personnel qui m'ont donné l'adresse mail du service afin que je transmette les questions adressés aux résidents. Ils m'ont ensuite donné rendez-vous. Les <span class="txt--jaune">premiers retours</span> du personnel étaient encourageants parce qu’ils jugeaient intéressante l’idée de développer une plateforme permettant l’apprentissage de l’utilisation d’appareils numériques et comment utiliser&nbsp;internet.</p>
               <p class="txt txt--itw">Par contre, <span class="txt--jaune">les retours</span> des résidents sont bien moins encourageants, la <span class="txt--jaune">majorité</span> d’entre eux <span class="txt--jaune">n’utilisent pas internet</span>. Ils disposent d’un smartphone pour recevoir des appels/messages. Ils n’ont pas non plus la volonté d’en apprendre. De plus ils sont aidés par leurs familles ou les services publics pour les tâches plus&nbsp;complexes.</p>
             </div>
-            <div class="swiper-slide">
-              <div class="container--illu--swiper container--illu-asbl">Illustration</div>
+            <div class="slider__body">
+              <div class="container__illu--swiper container__illu-asbl">Illustration</div>
               <h4 class="title title--slide">Association Sans But&nbsp;Lucratif</h4>
-              <p class="txt txt--intro txt--intro--slide" >Ma <span class="txt--big-jaune">seconde idée</span> est donc d’interviewer par mail ou par appel téléphonique directement des associations qui accompagnent des personnes qui sont touchées par la fracture&nbsp;numérique.</p>
+              <p class="txt txt--intro" >Ma <span class="txt--big-jaune">seconde idée</span> est donc d’interviewer par mail ou par appel téléphonique directement des associations qui accompagnent des personnes qui sont touchées par la fracture&nbsp;numérique.</p>
               <p class="txt txt--itw">Je suis entré en contact avec Victoire Dunker de l’association <span class="txt--jaune">Bibliothèque Sans Frontière</span>. Cet échange est très intéressant et instructif que j’ai reçu car cette association a vraiment pour but de favoriser l’inclusion numérique pour toute personne qui en est&nbsp;éloignée.</p>
               <p class="txt txt--itw">Elle propose des avec des ateliers numériques basés sur l’apprentissage collaboratif et ludique avec des séances progressives. Elle propose aussi des <span class="txt--jaune">formations de formateur</span>, accessibles à tout le monde pour devenir aidant numérique mais aussi pour les professionnels tel que les assistants sociaux, agents d’administration&nbsp;/&nbsp;d’insertion.</p>
             </div>
-            <div class="swiper-slide">
-              <div class="container--illu--swiper container--illu-asbl">Illustration</div>
+            <div class="slider__body">
+              <div class="container__illu--swiper container__illu-asbl">Illustration</div>
               <h4 class="title title--slide">ASBL</h4>
-              <p class="txt txt--intro txt--intro--slide" >Dans le cadre des associations j'ai échangé par mail avec Isabelle Senecal de l'association <span class="txt--big-jaune">Petits Frères des Pauvres</span> qui agit principalement pour lutter contre l’isolement des personnes âgées ou à revenu&nbsp;modeste.</p>
+              <p class="txt txt--intro" >Dans le cadre des associations j'ai échangé par mail avec Isabelle Senecal de l'association <span class="txt--big-jaune">Petits Frères des Pauvres</span> qui agit principalement pour lutter contre l’isolement des personnes âgées ou à revenu&nbsp;modeste.</p>
               <p class="txt txt--itw">Leur principale force d’action est la <span class="txt--jaune">visite de bénévoles au domicile</span>, établissement d’accueil ou hôpital afin de leur venir en aide. Ils proposent des ateliers numériques pour leur montrer qu’<span class="txt--jaune">Internet peut-être intéressant</span> en fonction de leurs centres d’intérêts et les aider dans les démarches administratives et l’accès&nbsp;au&nbsp;soin.</p>
               <p class="txt txt--itw">Elle m’a dit que le support le plus efficace auprès des personnes âgées est le <span class="txt--jaune">contact humain</span>, qu’une plateforme numérique d'apprentissage n’est pertinente que pour les personnes avec un minimum de compétence&nbsp;numérique.</p>
             </div>
-            <div class="swiper-slide">
-              <div class="container--illu--swiper container--illu-social">Illustration</div>
+            <div class="slider__body">
+              <div class="container__illu--swiper container__illu-social">Illustration</div>
               <h4 class="title title--slide">Cohésion&nbsp;sociale</h4>
-              <p class="txt txt--intro txt--intro--slide" >Pour finir j'ai eu un échange téléphonique avec Sophie Gaethofs de la cellule <span class="txt--big-jaune">Cohésion Sociale</span> du service “égalité des chances” de la ville de namur, un service qui dispose d’une dizaine de cellules&nbsp;d’intervention.</p>
+              <p class="txt txt--intro" >Pour finir j'ai eu un échange téléphonique avec Sophie Gaethofs de la cellule <span class="txt--big-jaune">Cohésion Sociale</span> du service “égalité des chances” de la ville de namur, un service qui dispose d’une dizaine de cellules&nbsp;d’intervention.</p>
               <p class="txt txt--itw">Elle m’explique qu’ils ont <span class="txt--jaune">beaucoup de demandes</span> pour les formations au numérique, les personnes viennent d'elles même ou sur conseil d’un proche. Mais la difficulté la plus récurrente est que souvent les personnes en situation de fracture numérique <span class="txt--jaune">ne savent pas à qui s’adresser</span>, il y a un réel <span class="txt--jaune">manque d’information</span> pour guider les personnes vers des services adaptés, un canal d’information papier, radio ou télévisuel serait le&nbsp;bienvenu.</p>
             </div>
-            <div class="swiper-slide">
-              <div class="container--illu--swiper container--illu-jeune">Illustration</div>
+            <div class="slider__body">
+              <div class="container__illu--swiper container__illu-jeune">Illustration</div>
               <h4 class="title title--slide">Retour&nbsp;aux&nbsp;utilisateurs</h4>
-              <p class="txt txt--intro txt--intro--slide" >J'ai ensuite envoyé un questionnaire de 20 sujets via google forms à un public de 20 à 60 ans. Les retours les plus réguliers sont le <span class="txt--big-jaune">manque de contact</span> avec une personne pour les guider, l'absence de chat box et les réponses prennent plusieurs jours, pas d’accompagnement&nbsp;vocal.</p>
+              <p class="txt txt--intro" >J'ai ensuite envoyé un questionnaire de 20 sujets via google forms à un public de 20 à 60 ans. Les retours les plus réguliers sont le <span class="txt--big-jaune">manque de contact</span> avec une personne pour les guider, l'absence de chat box et les réponses prennent plusieurs jours, pas d’accompagnement&nbsp;vocal.</p>
               <p class="txt txt--itw">Ils sont souvent <span class="txt--jaune">rediriger vers des forums</span> ou ils ne trouvent pas réponse à leurs questions, ils ont du mal à savoir où trouver les ressources pour acquérir les compétences de base en informatique. Ils ne savent pas où et comment <span class="txt--jaune">exprimer leurs difficultés</span>, ni vers qui se tourner pour être&nbsp;aidé.</p>
             </div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
         </div>
 
-
-        
-        <h4 class="title title--para">Conclusion</h4>
-        <p class="txt txt--intro">La Fracture Numérique est un sujet beaucoup plus complexe qu'il n'y parait. Je me suis concentré sur les cas suivants. Les maisons de repos avec leurs résidents et personnels de santé, plusieurs associations qui accompagnent les plus démuni, qui proposent des formations numériques qui accompagnent les personnes agées par l'intermédiaire de bénévole au domicile. La cohésion sociale et leurs cellules d'informations mais aussi par les&nbsp;réseaux&nbsp;sociaux.</p>
-        <p class="txt">Toutes ces missions m'ont permis de rencontrer des gens très attachats et tous concernés d'un côté comme de l'autre par la fracture numérique, chacun à son niveau et sa portée. Devant tant de complexité, l'hypothèse sera de réduire le champ de recherche et d'action à une seule idée, un&nbsp;seul&nbsp;sujet.</p>
+        <h4 class="title title--para hide">Conclusion</h4>
+        <p class="txt txt--intro hide">La Fracture Numérique est un sujet beaucoup plus complexe qu'il n'y parait. Je me suis concentré sur les cas suivants. Les maisons de repos avec leurs résidents et personnels de santé, plusieurs associations qui accompagnent les plus démuni, qui proposent des formations numériques qui accompagnent les personnes agées par l'intermédiaire de bénévole au domicile. La cohésion sociale et leurs cellules d'informations mais aussi par les&nbsp;réseaux&nbsp;sociaux.</p>
+        <p class="txt hide">Toutes ces missions m'ont permis de rencontrer des gens très attachats et tous concernés d'un côté comme de l'autre par la fracture numérique, chacun à son niveau et sa portée. Devant tant de complexité, l'hypothèse sera de réduire le champ de recherche et d'action à une seule idée, un&nbsp;seul&nbsp;sujet.</p>
+      </section>
+      <section class="grid__blue">
+        <div data-aos="fade-right" data-aos-duration="1500" class="container__illu container__illu-hypo">hypothèse</div>
+        <h1 data-aos="fade-down-left" data-aos-duration="1500" class="title title--num" id="Hyp">03</h1>
+        <h2 data-aos="fade-up-left" data-aos-duration="1500" class="title title--sec">Hypothèses</h2>
       </section>
       <section class="grid">
-        <div class="container--illu container--illu-hypo">hypothèse</div>
-        <h1 class="title title--num" id="Hyp">03</h1>
-        <h2 class="title title--sec">Hypothèses</h2>
-        <p class="txt txt--intro">Créer une plateforme qui s'adresse aux personnes avec de faibles compétences numériques. Elle contiendrait un guide d'utilisation très simple qui permet à tous de l'utiliser avec des&nbsp;raccourcis. L'intérêt est de pouvoir trouver à proximiter des services qui permettent d'apprendre ou d'accroitre ses compétences&nbsp;numériques.</p>
-        <h3 class="title title--prin">Plusieurs&nbsp;idées</h3>
-<div class="container__drop">
+        <p class="txt txt--intro hide">Créer une plateforme qui s'adresse aux personnes avec de faibles compétences numériques. Elle contiendrait un guide d'utilisation très simple qui permet à tous de l'utiliser avec des&nbsp;raccourcis. L'intérêt est de pouvoir trouver à proximiter des services qui permettent d'apprendre ou d'accroitre ses compétences&nbsp;numériques.</p>
+        <h3 class="title title--prin hide">Plusieurs&nbsp;idées</h3>
+<div class="container__drop hide">
   <ul class="list">
     <li class="dropdown">
       <p class="txt txt--drop"><a href="#" data-toggle="dropdown">Exprimer ses&nbsp;besoins<span class="icon__arrow"></span></a></p> 
@@ -195,13 +207,15 @@
   </ul>
 </div>
         </section>
+        <section class="grid__blue">
+          <div data-aos="fade-right" data-aos-duration="1500" class="container__illu container__illu-idee">fonctionnalités</div>
+          <h1 data-aos="fade-down-left" data-aos-duration="1500" class="title title--num" id="Fonc">04</h1>
+          <h2 data-aos="fade-up-left" data-aos-duration="1500" class="title title--sec">Solution</h2>
+        </section>
         <section class="grid">
-          <div class="container--illu container--illu-idee">fonctionnalités</div>
-          <h1 class="title title--num" id="Fonc">04</h1>
-          <h2 class="title title--sec">Solution</h2>
-          <h3 class="title title--prin">L'objectif&nbsp;:</h3>
-          <p class="txt txt--intro">Avoir une page d'accueil ou l'utilisateur dispose d'un tutoriel qui l'amène vers un formulaire qui à pour but d'orienter l'utilisateurs vers <span class="txt--big-jaune">un annuaire</span> personnalisé et filtré des services à proximités en fonction de ses besoins qui contient un détail de chaque service ainsi que les coordonnées de contact. Un espace de communication instantannée en cas de besoin. Afficher une <span class="txt--big-jaune">liste des sites</span> permettant de se former de manière autonome avec un guide d’utilisation. Permettre <span class="txt--big-jaune">l’entraide volontaire</span> en devenant acteur de&nbsp;la&nbsp;plateforme.</p>
-          <div class="container__drop">
+          <h3 class="title title--prin hide">L'objectif&nbsp;:</h3>
+          <p class="txt txt--intro hide">Avoir une page d'accueil ou l'utilisateur dispose d'un tutoriel qui l'amène vers un formulaire qui à pour but d'orienter l'utilisateurs vers <span class="txt--big-jaune">un annuaire</span> personnalisé et filtré des services à proximités en fonction de ses besoins qui contient un détail de chaque service ainsi que les coordonnées de contact. Un espace de communication instantannée en cas de besoin. Afficher une <span class="txt--big-jaune">liste des sites</span> permettant de se former de manière autonome avec un guide d’utilisation. Permettre <span class="txt--big-jaune">l’entraide volontaire</span> en devenant acteur de&nbsp;la&nbsp;plateforme.</p>
+          <div class="container__drop hide">
             <ul class="list">
               <li class="dropdown">
                 <p class="txt txt--drop"><a href="#" data-toggle="dropdown">Le guide&nbsp;d'utilisation<span class="icon__arrow"></span></a></p>
@@ -236,60 +250,64 @@
             </ul>
           </div>
         </section>
+        <section class="grid__blue">
+          <div data-aos="fade-right" data-aos-duration="1500" class="container__illu container__illu-oral">présentation</div>
+          <h1 data-aos="fade-down-left" data-aos-duration="1500" class="title title--num" id="Pre">05</h1>
+          <h2 data-aos="fade-up-left" data-aos-duration="1500" class="title title--sec">Présentation</h2>
+        </section>
         <section class="grid">
-          <div class="container--illu container--illu-oral">présentation</div>
-          <h1 class="title title--num" id="Pre">05</h1>
-          <h2 class="title title--sec">Présentation</h2>
-          <h3 class="title title--prin">Oral&nbsp;et&nbsp;Slide</h3>
-          <p class="txt txt--intro">Pour la présentation de mon <span class="txt--big-jaune">TFA</span>, je dois me concentrer sur les <span class="txt--big-jaune">points essentiels</span> du développement de mon projet, créer une présentation comprenant le design de mon site, avec des visuels en accord avec chaque&nbsp;sujet.</p>
-          <p class="txt">La <span class="txt--jaune">préparation</span> de mon discours doit être un résumé simple et cohérent. Avec un support écrit qui décrit les grandes lignes de la présentation afin de répondre aux questions et de pouvoir reprendre le fil de ma&nbsp;présentation.</p>
-          <h4 class="title title--para">Les points&nbsp;clefs</h4>
-          <ul class="list">
+          <h3 class="title title--prin hide">Oral&nbsp;et&nbsp;Slide</h3>
+          <p class="txt txt--intro hide">Pour la présentation de mon <span class="txt--big-jaune">TFA</span>, je dois me concentrer sur les <span class="txt--big-jaune">points essentiels</span> du développement de mon projet, créer une présentation comprenant le design de mon site, avec des visuels en accord avec chaque&nbsp;sujet.</p>
+          <p class="txt hide">La <span class="txt--jaune">préparation</span> de mon discours doit être un résumé simple et cohérent. Avec un support écrit qui décrit les grandes lignes de la présentation afin de répondre aux questions et de pouvoir reprendre le fil de ma&nbsp;présentation.</p>
+          <h4 class="title title--para hide">Les points&nbsp;clefs</h4>
+          <ul class="list hide">
             <li class="txt txt--list--big">Une&nbsp;introduction</li>
             <li class="txt txt--list">Me présenter auprès du&nbsp;jury.</li>
             <li class="txt txt--list">Introduire le sujet de mon&nbsp;travail.</li>
             <li class="txt txt--list">Présentation de la problématiques et des sujets qui vont être&nbsp;abordés.</li>
           </ul>
-          <ul class="list">
+          <ul class="list hide">
             <li class="txt txt--list--big">La Fracture&nbsp;Numérique</li>
             <li class="txt txt--list">Définir la fracture numérique et ses&nbsp;conséquences.</li>
             <li class="txt txt--list">Définir les trois degrés de fracture avec des&nbsp;statistiques.</li>
             <li class="txt txt--list">Définir brièvement les facteurs y contribuants et les populations&nbsp;impactées.</li>
           </ul>
-          <ul class="list">
+          <ul class="list hide">
             <li class="txt txt--list--big">La Méthodologie</li>
             <li class="txt txt--list">Une présentation des méthodes utilisées qui ont permis de cerner les&nbsp;problématiques.</li>
             <li class="txt txt--list">Une conclusion des points clefs issues des&nbsp;rencontres.</li>
           </ul>
-          <ul class="list">
+          <ul class="list hide">
             <li class="txt txt--list--big">Les Fonctionnalités</li>
             <li class="txt txt--list">Les solutions envisagées pour répondre aux problématiques&nbsp;énumérées.</li>
             <li class="txt txt--list">Le guide d'utilisation et son&nbsp;objectif.</li>
             <li class="txt txt--list">La présentation du formulaire et son intérêt pour&nbsp;l'utilisateur.</li>
           </ul>
-          <ul class="list">
+          <ul class="list hide">
             <li class="txt txt--list--big">Le Design &&nbsp;l'Interface</li>
             <li class="txt txt--list">Un bref apperçu de ma landing&nbsp;page.</li>
             <li class="txt txt--list">Une justification du design mis en place et de&nbsp;l'interface.</li>
             <li class="txt txt--list">La présentation d'une maquette de la futur application&nbsp;envisagé.</li>
           </ul>
-          <ul class="list">
+          <ul class="list hide">
             <li class="txt txt--list--big">La Conclusion</li>
             <li class="txt txt--list">Une explication de l'évolution du projet et les changements&nbsp;opérés.</li>
             <li class="txt txt--list">Résumé des points abordés et les pistes&nbsp;d'amélioration.</li>
             <li class="txt txt--list">Drop the mic.</li>
           </ul>
         </section>
+        <section class="grid__blue">
+          <div data-aos="fade-right" data-aos-duration="1500" class="container__illu container__illu-adn">ADN</div>
+          <h1 data-aos="fade-down-left" data-aos-duration="1500" class="title title--num" id="ADN">06</h1>
+          <h2 data-aos="fade-up-left" data-aos-duration="1500" class="title title--sec">Évolution</h2>
+        </section>
         <section class="grid">
-          <div class="container--illu container--illu-adn">ADN</div>
-          <h1 class="title title--num" id="ADN">06</h1>
-          <h2 class="title title--sec">Évolution</h2>
-          <p class="txt txt--intro">Travailler sur la Fracture Numérique a été une expérience très enrichissante pour moi. Cela m'a permis de comprendre sa signification et son impact dans notre société ainsi que les personnes qui sont directement impactées. Au départ, mon projet visait à aider les personnes âgées à maîtriser l'utilisation des appareils numériques et d'internet. C'était un bon point de départ qui me tenait à coeur, mais au fil de mes recherches et des interactions avec des membres d'associations, des professionnels de santé, du secteur sociale, des personnes impactées ainsi que mes professeurs, j'ai réalisé que cette approche est trop complexe et peu pertinente. Des plateformes similaires existent déjà et ne sont pas totalement abouties et ne peuvent répondre aux besoins spécifique de chacun ou chaque site&nbsp;et&nbsp;appareil.</p>
-          <p class="txt">C'est en écoutant les retours et les conseils des ces acteurs que l'idée initiale a évolué. Le problème réside dans le manque d'information et connaissance concernant les opportunités disponibles pour accéder à l'apprentissage numérique. La recherche de ces ressources pouvait en décourager plus d'un, ce qui renforce davantage la fracture numérique. C'est pourquoi j'ai choisi de me concentrer sur une approche plus pertinente à mes&nbsp;yeux.</p>
-          <p class="txt">Mon objectif avec Digital Bridge est faire découvrir les services et formation déjà existants pour acquérir ces compérences numérique. Faciliter le contact avec les centres de formation à proximité et informer sur les aides existantes pour l'accès et l'usage du&nbsp;numérique.</p>
+          <p class="txt txt--intro hide">Travailler sur la Fracture Numérique a été une expérience très enrichissante. Comprendre son impact dans notre société ainsi que les personnes qui sont directement touchées. Au départ, mon projet visait à aider les personnes âgées à maîtriser l'utilisation des appareils numériques et d'internet. C'était un bon point de départ qui me tenait à coeur, mais au fil de mes recherches et des interactions avec des membres d'associations, des professionnels de santé, du secteur sociale, des personnes impactées ainsi que mes professeurs, j'ai réalisé que cette approche est trop complexe et&nbsp;peu&nbsp;pertinente.</p>
+          <p class="txt hide">C'est en écoutant les retours et les conseils des ces acteurs que l'idée initiale a évolué. Le problème réside dans le manque d'information et connaissance concernant les opportunités disponibles pour accéder à l'apprentissage numérique. La recherche de ces ressources pouvait en décourager plus d'un, ce qui renforce davantage la fracture numérique. C'est pourquoi j'ai choisi de me concentrer sur une approche plus pertinente à mes&nbsp;yeux.</p>
+          <p class="txt hide">Mon objectif avec Digital Bridge est faire découvrir les services et formation déjà existants pour acquérir ces compérences numérique. Faciliter le contact avec les centres de formation à proximité et informer sur les aides existantes pour l'accès et l'usage du&nbsp;numérique.</p>
         </section>
       </main>
-    <footer class="container__footer grid__footer">
+    <footer class="container__footer grid__footer hide">
       <svg class="dwt"></svg>
       <ul class="menu__footer">
         <li class="menu__footer--el"> <a href="UiKit.html#">Ui-Kit</a></li>
