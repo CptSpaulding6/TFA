@@ -696,6 +696,25 @@ tbody th:nth-child(odd){
     height: 150px;
 }
 
+// Video
+
+.container__video {
+    display: grid;
+    grid-column: 1/-1;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    margin: 20px;
+    padding: 40px 0;
+  }
+
+  .video {
+    grid-column: 1/-1;
+    margin: 20px auto;
+    width: 80%;
+    height: auto;
+  }
+
 // Footer
 
 .container__footer {
